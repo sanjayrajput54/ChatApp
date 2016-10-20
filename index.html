@@ -1,0 +1,80 @@
+<html lang="en"><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <meta charset="utf-8">
+        <title>WebApp</title>
+        <meta name="generator" content="Bootply">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Example snippet for a Bootstrap login form modal">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- CSS code from Bootply.com editor -->        
+        <style type="text/css">
+            .modal-footer {   border-top: 0px; }
+        </style>
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body ng-app="demoApp" ng-controller="indexController">
+    <div ui-view></div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/customScript.js"></script>		
+		<!--script type="text/javascript" src="js/app.js"></script-->
+		<script src="js/angular.js"></script>
+        <script src="js/angular-ui-router.min.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="js/app.js"></script>
+        <!-- JavaScript Controller code from  editor  -->
+        <script type="text/javascript" src="js/indexController.js"></script>
+		<script type="text/javascript" src="js/loginController.js"></script>
+		<script type="text/javascript" src="js/chatController.js"></script>
+		<script type="text/javascript" src="js/registrationController.js"></script>
+		
+		
+		 <script>
+	 var socket = io(); 
+	 var userList = [];
+	 var currentSocketInfo={};
+function submitfunction(){
+debugger;
+
+    socket.emit('onetwoone',currentSocketInfo,message);
+	
+}
+
+
+ 
+socket.on('chatMessage', function(from, msg){
+ 
+});
+ 
+ 
+ 
+ socket.on('onetwoone', function(objInfo, msg){
+
+ }
+  
+  
+  });
+
+socket.on('notifyUser', function(user){
+   var getUserInfo=JSON.parse($('#user').val());
+   var me = getUserInfo.name;
+  if(user != me) {
+    $('#notifyUser').text(user + ' is typing ...');
+  }
+  setTimeout(function(){ $('#notifyUser').text(''); }, 10000);;
+});
+
+ 
+
+
+  //socket.emit('adduser', userInfo);
+  //return false;
+ //}
+
+ 
+</script>
+
+</body></html>
